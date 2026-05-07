@@ -3,10 +3,7 @@ FROM library/debian:stable-slim AS build
 ENV LANG=C.UTF-8
 
 RUN export DEBIAN_FRONTEND=noninteractive \
- && apt-get update \
- && apt-get install -y \
-        --no-install-recommends \
-        apt-utils
+ && apt-get update
 
 RUN mkdir -p /build/image
 WORKDIR /build
@@ -46,6 +43,8 @@ RUN mkdir -p etc/stunnel/conf.d \
 COPY etc/ etc/
 
 FROM clover/common
+
+ENV STUNNEL_ARGS="/etc/stunnel/stunnel.conf"
 
 WORKDIR /
 COPY --from=build /build/image /

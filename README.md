@@ -7,12 +7,19 @@ This image is based on official [stunnel](https://www.stunnel.org) builds for de
 
 ### Enviroment variables
 
+
+### Enviroment variables
+
 | Name | Default value | Description
 | ---- | ------------- | -----------
-| `PUID` | `50` | Desired _UID_ of the process owner _*_
-| `PGID` | primary group id of the _UID_ user (`50`) | Desired _GID_ of the process owner _*_
-| `CRON` | _not set_ | Will start _cron_ inside the container if set to `1`
-| `TIMEZONE` | `UTC` | Desired container timezone
+| `PUID` | _not set_ | desired user id of the process owner
+| `PGID` | _not set_ | desired group id of the process pwner (primary group of the `PUID` user)
+| `PUSER` | _not set_ | desired `PUID` user name
+| `PGROUP` | _not set_ | desired `PGID` group name
+| `CHOWN` | _not set_ | space-separated list of directories to change ownership to `PUID`/`PGID` during container startup
+| `CRON` | _not set_ (`0`) | will start _cron_ inside the container if set to `1`
+| `TZ` / `TIMEZONE` | _not set_ (`UTC`) | desired container timezone
+| `STUNNEL_ARGS` | `/etc/stunnel/stunnel.conf` | arbitrary arguments to pass to `stunnel`
 
 ### Configuration files
 
