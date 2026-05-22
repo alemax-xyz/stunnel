@@ -7,9 +7,6 @@ This image is based on official [stunnel](https://www.stunnel.org) builds for de
 
 ### Enviroment variables
 
-
-### Enviroment variables
-
 | Name | Default value | Description
 | ---- | ------------- | -----------
 | `PUID` | _not set_ | desired user id of the process owner
